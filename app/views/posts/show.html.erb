@@ -1,4 +1,7 @@
-<div>
-  <h1 class="font-bold text-4xl">Posts#show</h1>
-  <p>Find me in app/views/posts/show.html.erb</p>
-</div>
+<%= @post.title %>
+<%= @post.body %>
+<% if current_user != @post.user %>
+  <%= link_to 'Profile', user_path(@user) %>
+<% else %>
+  <%= link_to 'マイページ', mypage_path %>
+<% end %>

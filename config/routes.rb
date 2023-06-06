@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/show'
   root to: 'posts#new'
+  get "users/:id" , to: "users#show", as: 'user'
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  get "users/profile" => "users#show"
+  get "mypage", to: "users#mypage"
   resources :posts
 end

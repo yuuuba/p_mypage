@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @user = @post.user
   end
 
   def new
